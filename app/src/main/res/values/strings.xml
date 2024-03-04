@@ -14,10 +14,10 @@
     <string name="error">Error</string>
     <string name="good_job_you_made_10_steps">Good job %1$s! You made 10 steps</string>
     <string name="reset_steps">Reset steps</string>
-    <string name="_09531253">09531253</string>
-    <string name="_09554561453">09554561453</string>
-    <string name="_098451453">098451453</string>
-    <string name="_09815415316">09815415316</string>
-    <string name="_03251564345">03251564345</string>
+    <string name="_09531253" translatable="false">09531253</string>
+    <string name="_09554561453" translatable="false">09554561453</string>
+    <string name="_098451453" translatable="false">098451453</string>
+    <string name="_09815415316" translatable="false">09815415316</string>
+    <string name="_03251564345" translatable="false">03251564345</string>
     <string name="analytics">Analytics</string>
 </resources>

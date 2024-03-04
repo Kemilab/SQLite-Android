@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fit Runner</string>
-    <string name="textview">T</string>
     <string name="steps">Koraci</string>
     <string name="share_via_sms">Podjeli putem SMS-a</string>
     <string name="down">Dolje</string>
@@ -12,4 +11,5 @@
     <string name="error">Greška</string>
     <string name="good_job_you_made_10_steps">Bravo %1$s!, napravio si 10 koraka</string>
     <string name="reset_steps">Resetiraj korake</string>
+    <string name="analytics">Analitika</string>
 </resources>
