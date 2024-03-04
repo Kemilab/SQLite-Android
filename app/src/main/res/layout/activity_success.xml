@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/running_abstract"
+    tools:context=".SuccessActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <RadioGroup
+            android:id="@+id/phones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/phone1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/_09815415316" />
+
+            <RadioButton
+                android:id="@+id/phone2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/_03251564345" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buttonShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_via_sms"
+            android:onClick="setOnClickListenerShare"
+            app:icon="@android:drawable/ic_menu_send"
+            app:iconTint="#00BCD4"
+            app:iconTintMode="multiply" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

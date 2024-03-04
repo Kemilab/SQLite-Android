@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/buttonDown"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/running_abstract"
+    android:configChanges="orientation|screenSize|keyboardHidden"
+    android:minHeight="48dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="start"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="250sp" />
+
+        <TextView
+            android:id="@+id/textViewCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?colorSecondary"
+            android:text="@string/_0"
+            android:textColor="?colorOnSecondary" />
+
+        <Button
+            android:id="@+id/buttonUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="setOnClickListenerUp"
+            android:text="@string/up"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="setOnClickListenerDown"
+            android:text="@string/down" />
+
+        <EditText
+            android:id="@+id/plainTextName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?colorSecondary"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="?colorOnSecondary"
+            android:textSize="20sp"
+            android:typeface="sans" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

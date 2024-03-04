@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Fit Runner</string>
+    <string name="textview" translatable="false">TextView</string>
+    <string name="steps">Steps</string>
+    <string name="share_via_sms">Share via SMS</string>
+    <string name="_0" translatable="false">0</string>
+    <string name="down">Down</string>
+    <string name="name">Name</string>
+    <string name="up">Up</string>
+    <string name="croatian" translatable="false">Hrvatski</string>
+    <string name="english" translatable="false">English</string>
+    <string name="value_was_deleted">Value was deleted</string>
+    <string name="choose">Choose!</string>
+    <string name="error">Error</string>
+    <string name="good_job_you_made_10_steps">Good job %1$s! You made 10 steps</string>
+    <string name="reset_steps">Reset steps</string>
+    <string name="_09531253">09531253</string>
+    <string name="_09554561453">09554561453</string>
+    <string name="_098451453">098451453</string>
+    <string name="_09815415316">09815415316</string>
+    <string name="_03251564345">03251564345</string>
+</resources>
