@@ -51,7 +51,8 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
             R.id.analytics ->{
-                // TODO:
+                val intent = Intent(this, AnalyticsActivity::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)
