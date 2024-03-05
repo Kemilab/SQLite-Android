@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.ContextMenu
 import android.view.Menu
@@ -15,12 +16,19 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.findViewTreeViewModelStoreOwner
+import com.example.androidtest.data.User
+import com.example.androidtest.data.UserViewModel
+import java.time.LocalTime
 import java.util.Locale
 
 
 class MainActivity : AppCompatActivity() {
     var brojac = 0
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var mUserViewModel: UserViewModel
 
     companion object {
         const val STEPS = "steps"
@@ -115,10 +123,12 @@ class MainActivity : AppCompatActivity() {
 
     fun setOnClickListenerUp(view: View) {
         brojac++
+        insertDataToDatabase()
         Log.i("brojac", "Stannje je $brojac")
         val steps = findViewById<TextView>(R.id.textViewCounter) //promjeni to u neki broj
         steps.text = "$brojac"
-        if (brojac == 10) {
+        val number: Int = brojac
+        if (number == 10) {
             val intent = Intent(this, SuccessActivity::class.java).apply {
                 putExtra("name", findViewById<TextView>(R.id.plainTextName).text.toString())
             }
@@ -130,8 +140,8 @@ class MainActivity : AppCompatActivity() {
         if (brojac > 0) {
             brojac--
             Log.i("brojac", "Stannje je $brojac")
-            val firstName = findViewById<TextView>(R.id.textViewCounter)
-            firstName.text = "$brojac"
+            val steps = findViewById<TextView>(R.id.textViewCounter)
+            steps.text = "$brojac"
         } else {
             Toast.makeText(applicationContext, getString(R.string.error), Toast.LENGTH_SHORT).show()
         }
@@ -149,4 +159,28 @@ class MainActivity : AppCompatActivity() {
         res.updateConfiguration(config, res.displayMetrics)
     }
 
+    /*fun checkNumberIncrese() {
+        var number = 0
+        if(brojac >= number + 10){
+            // TODO: tu se upisuje
+            Toast.makeText(applicationContext, "upis", Toast.LENGTH_SHORT).show()
+            Log.i("Number", "$number")
+        }
+    }*/
+
+    private fun insertDataToDatabase() {
+
+        mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        val name = findViewById<TextView>(R.id.plainTextName).text.toString()
+        val time = LocalTime.now()
+        val timeString = time.toString() // this stores the value of time
+        if(TextUtils.isEmpty(name)){
+           Log.e("Dabase", "User didn't enter it's name")
+            Toast.makeText(applicationContext,
+                getString(R.string.enter_your_name), Toast.LENGTH_SHORT).show()
+        }else{
+            val user = User(0, name, timeString, brojac)
+            mUserViewModel.addUser(user)
+        }
+    }
 }

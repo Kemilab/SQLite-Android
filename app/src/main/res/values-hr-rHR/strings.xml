@@ -12,4 +12,5 @@
     <string name="good_job_you_made_10_steps">Bravo %1$s!, napravio si 10 koraka</string>
     <string name="reset_steps">Resetiraj korake</string>
     <string name="analytics">Analitika</string>
+    <string name="enter_your_name">Unesite svoje ime</string>
 </resources>
