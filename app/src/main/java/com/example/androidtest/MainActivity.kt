@@ -176,6 +176,7 @@ class MainActivity : AppCompatActivity() {
         val timeString = time.toString() // this stores the value of time
         if(TextUtils.isEmpty(name)){
            Log.e("Dabase", "User didn't enter it's name")
+            brojac --
             Toast.makeText(applicationContext,
                 getString(R.string.enter_your_name), Toast.LENGTH_SHORT).show()
         }else{
