@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
                 recreate()
                 return true
             }
+
             R.id.analytics ->{
                 val intent = Intent(this, AnalyticsActivity::class.java)
                 startActivity(intent)
