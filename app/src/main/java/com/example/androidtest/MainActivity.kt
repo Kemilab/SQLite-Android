@@ -28,6 +28,7 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
     var brojac = 0
     private lateinit var sharedPreferences: SharedPreferences
+
     private lateinit var mUserViewModel: UserViewModel
 
     companion object {

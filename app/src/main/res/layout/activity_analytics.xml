@@ -10,84 +10,60 @@
 
     <TextView
         android:id="@+id/ime"
-        android:layout_width="70dp"
-        android:layout_height="35dp"
-        android:enabled="false"
-        android:text="Ime"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
-
-    <TextView
-        android:id="@+id/vrijeme"
-        android:layout_width="70dp"
-        android:layout_height="35dp"
-        android:enabled="false"
-        android:text="Vrijeme"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.856"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
-
-    <EditText
-        android:id="@+id/editTextText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="101dp"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="text"
-        android:text="Analytics"
-        android:textAlignment="center"
+        android:text="Ime"
         android:textColor="@color/white"
-        android:textSize="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintBottom_toTopOf="@+id/recycle"
+        app:layout_constraintVertical_bias="0.1" />
 
     <TextView
         android:id="@+id/id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="330dp"
-        android:enabled="false"
         android:text="1"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/ime"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recycle"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/broj_koraka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Koraci"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/id"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recycle"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/vrijeme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vrijeme"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/broj_koraka"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recycle"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269" />
-
-    <TextView
-        android:id="@+id/broj_koraka"
-        android:layout_width="70dp"
-        android:layout_height="35dp"
-        android:enabled="false"
-        android:text="Broj koraka"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintTop_toBottomOf="@+id/ime" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
