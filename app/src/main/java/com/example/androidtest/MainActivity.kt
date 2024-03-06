@@ -147,6 +147,7 @@ class MainActivity : AppCompatActivity() {
     fun setOnClickListenerDown(view: View) {
         if (brojac > 0) {
             brojac--
+            press --
             Log.i("brojac", "Stannje je $brojac")
             val steps = findViewById<TextView>(R.id.textViewCounter)
             steps.text = "$brojac"
@@ -174,11 +175,10 @@ class MainActivity : AppCompatActivity() {
         val timeString = time.toString() // this stores the value of time
         if(TextUtils.isEmpty(name)){
             Log.e("Database", "User didn't enter its name")
-            Toast.makeText(applicationContext,
-                getString(R.string.enter_your_name), Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, getString(R.string.enter_your_name), Toast.LENGTH_SHORT).show()
         } else {
             if (press < 10) {
-                Log.i("press","")
+                Log.i("press","Pressed $press")
             } else {
                 press -= 10
                 val user = User(0, name, timeString, brojac)
