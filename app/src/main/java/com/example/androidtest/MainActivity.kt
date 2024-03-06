@@ -27,9 +27,10 @@ import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     var brojac = 0
+    var press = 0
     private lateinit var sharedPreferences: SharedPreferences
 
-    private lateinit var mUserViewModel: UserViewModel
+   private lateinit var mUserViewModel: UserViewModel
 
     companion object {
         const val STEPS = "steps"
@@ -47,6 +48,10 @@ class MainActivity : AppCompatActivity() {
                 val steps = findViewById<TextView>(R.id.textViewCounter)
                 steps.text = "$brojac" //displays the value
                 true
+                mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+                mUserViewModel.deleteAll()
+                Toast.makeText(applicationContext,
+                    getString(R.string.storage_deleted), Toast.LENGTH_SHORT).show()
             }
             R.id.croatian -> {
                 changeLanguage(this, "hr")
@@ -105,6 +110,7 @@ class MainActivity : AppCompatActivity() {
                 val brojacValue = textView.text.toString().toIntOrNull() ?: 0
                 val editor = sharedPreferences.edit()
                 true
+
             }
             else -> super.onContextItemSelected(item)
         }
@@ -124,6 +130,7 @@ class MainActivity : AppCompatActivity() {
 
     fun setOnClickListenerUp(view: View) {
         brojac++
+        press ++
         insertDataToDatabase()
         Log.i("brojac", "Stannje je $brojac")
         val steps = findViewById<TextView>(R.id.textViewCounter) //promjeni to u neki broj
@@ -160,29 +167,24 @@ class MainActivity : AppCompatActivity() {
         res.updateConfiguration(config, res.displayMetrics)
     }
 
-    /*fun checkNumberIncrese() {
-        var number = 0
-        if(brojac >= number + 10){
-            // TODO: tu se upisuje
-            Toast.makeText(applicationContext, "upis", Toast.LENGTH_SHORT).show()
-            Log.i("Number", "$number")
-        }
-    }*/
-
     private fun insertDataToDatabase() {
-
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         val name = findViewById<TextView>(R.id.plainTextName).text.toString()
         val time = LocalTime.now()
         val timeString = time.toString() // this stores the value of time
         if(TextUtils.isEmpty(name)){
-           Log.e("Dabase", "User didn't enter it's name")
-            brojac --
+            Log.e("Database", "User didn't enter its name")
             Toast.makeText(applicationContext,
                 getString(R.string.enter_your_name), Toast.LENGTH_SHORT).show()
-        }else{
-            val user = User(0, name, timeString, brojac)
-            mUserViewModel.addUser(user)
+        } else {
+            if (press < 10) {
+                Log.i("press","")
+            } else {
+                press -= 10
+                val user = User(0, name, timeString, brojac)
+                mUserViewModel.addUser(user)
+            }
         }
     }
+
 }

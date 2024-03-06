@@ -14,4 +14,7 @@ interface UserDao {
     @Query("SELECT * FROM analysis ORDER BY id ASC")
     fun readAllData(): LiveData<List<User>>
 
+    @Query("DELETE FROM analysis")
+    suspend fun deleteAllData()
+
 }

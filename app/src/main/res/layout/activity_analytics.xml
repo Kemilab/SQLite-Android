@@ -4,57 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blue"
+    android:background="@color/orange"
     android:padding="24sp"
     tools:context=".AnalyticsActivity">
 
-    <TextView
-        android:id="@+id/ime"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/userInfoLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Ime"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/recycle"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintStart_toEndOf="@+id/ime"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/recycle"
-        app:layout_constraintVertical_bias="0.1" />
+        <TextView
+            android:id="@+id/ime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ime"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/broj_koraka"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Koraci"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/id"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/recycle"
-        app:layout_constraintVertical_bias="0.1" />
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ID"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/vrijeme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vrijeme"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/broj_koraka"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/recycle"
-        app:layout_constraintVertical_bias="0.1" />
+        <TextView
+            android:id="@+id/broj_koraka"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Koraci"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/vrijeme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Vrijeme"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle"
@@ -62,8 +62,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ime" />
+        app:layout_constraintTop_toBottomOf="@+id/userInfoLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

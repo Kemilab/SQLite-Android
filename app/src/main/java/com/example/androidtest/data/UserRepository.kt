@@ -10,4 +10,8 @@ val readAllData: LiveData<List<User>> = userDao.readAllData()
         userDao.addActivity(user)
     }
 
+    suspend fun delete(){
+        userDao.deleteAllData()
+    }
+
 }
